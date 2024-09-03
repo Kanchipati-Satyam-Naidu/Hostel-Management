@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block home %}
+<div class="upper" style="height:fit-content;">
+    <div class="lower" style="height:fit-content;margin-bottom: 30px;">
+        {% if "/room_info/" in request.path %}
+        <h2 style="color:green;text-align:center;border-bottom:3px solid gold;">Details of room: {{rn}}</h2>
+        <form method="post"  class="form-group">
+            {% csrf_token %}
+        {% for i in f %}
+            {{i.label_tag}}
+            {{i}}
+        {% endfor %}<div style="display:flex;justify-content: space-evenly;margin-top: 20px;">
+        <button class="button" type="submit" >Update</button>
+        <button class="button" ><a href="{% url 'rooms' %}">Back</a></button>
+        <button class="button" ><a href="{% url 'delete_room'  rn %}">Delete</a></button>
+    </div>
+        {% else %}
+        <h2 style="border-bottom: 3px solid gold;color:#2fff00;display:flex;justify-content: center;">My Profile:</h2>
+        <form method="post"  class="form-group">
+            {% csrf_token %}
+        {% for i in f %}
+            {{i.label_tag}}
+            {{i}}
+        {% endfor %}
+        <label>Room type:</label>
+        <input type="text" value="{{rd.room_type}}" class="form-control mt-0 mb-3 my-3" readonly>
+        <input type="submit" value="Save" class="btn btn-success ">
+        <button style="background-color: yellow;height:44px" class="btn "><a href="{% url 'home' %}" >Dont't save</a></button>
+        </form>
+            {% endif %}
+    </form>
+    </div>
+</div>
+{% endblock %}

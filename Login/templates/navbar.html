@@ -1,0 +1,636 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghu Boys Hostel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="icon" type="text/css" href="{% static '/images/mainlogo.png' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Contact Links -->
+  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+   <style>
+     body{
+        box-sizing: border-box;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        user-select: none;
+        overflow-x: hidden;
+        
+     }
+     a{
+      text-decoration: none;
+      color:#040404;
+     }
+     .row1{
+       margin-top:20px;
+      background: transparent;
+      display:flex;
+      align-items: center;
+      justify-content: end;
+       border-radius:15PX 15px;
+       display: flex;
+       width:100%;
+       height:80px;   
+     }
+   
+   .img{
+        height:55.6px;
+        width: 250px;
+        object-fit:cover;
+        margin-top:7px;    
+        margin-left: 3.9px;
+        image-resolution:initial;
+        filter: brightness(100%);
+        background-color: transparent;
+        mix-blend-mode:hard-light;
+        overflow: hidden;
+    }
+    .row1 a{
+        text-decoration: none;
+        color:black;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 20px;
+        position: relative;
+        transition: border-bottom 0.9s ease-in;
+    }
+
+    .row1 a:hover {
+  border-bottom: 5px solid rgb(103, 183, 46);
+  border-bottom-right-radius:7px;
+}
+
+.row .col-2 a{
+    border: 1px solid rgb(153, 213, 132);
+    height: 80px;  
+    border-radius: 49%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:2rem;
+}
+ .container{
+        height:max-content;
+        background-size: cover;
+        background-color: white;
+        flex-direction:column;
+        display:flex;
+       margin-top:70px;
+       border-radius: 15px;
+        width:920px;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    } 
+    .container1{
+       height:max-content;
+        background-size: cover;
+        background-color: white;
+        flex-direction:column;
+        display:flex; 
+       margin-top:70px;
+       border-radius: 15px;
+        width:920px;
+    }
+    .row{
+      display: flex
+    }
+    [class*='col-'],.col{
+        height: 100%;
+        margin: 0;
+    }
+   
+    .col-7{
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 20px 0px 20px 0px;
+        /* background-image: url("{% static '\images\sign-up.png' %}"); */
+        height:600px;
+        margin-right: 0;
+        border-radius:10px;
+        background-size:fill;
+        
+    }
+ 
+    .span1{
+        top: 2%;
+        position: absolute;
+        left:15%;
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        background:linear-gradient(to right, #ff512f, #f09819);
+    }
+    .span2{
+        position: absolute;
+       top:77.88%;
+        left: 72.8%;
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        background:linear-gradient(#1845ad, #23a2f6);
+    }
+    .col-5{
+        height:max-content;
+        border-radius:10px;
+        background-size:fill;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+   
+   }
+       
+    h2{
+        color: #278ae0;
+        font-family: sans-serif;
+        font-size:32px;
+    }
+
+  .button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0 10px;
+  border:3px solid rgba(104, 85, 224, 1);
+   background: transparent;
+  width: 172px;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+  transition: 0.4s;
+   margin-left:10px;
+    }
+  .button:first-child:hover {
+  color: white;
+
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
+}
+.button:last-child:hover {
+  color: white;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgb(212, 75, 40);
+}
+.container a{
+  text-decoration: none;
+  text-align: center;
+  font-family: sans-serif;
+  color:black;
+  margin-left: 35px;
+}
+.hb{
+  margin-top: 20px;
+  margin-left: 20px;
+  height:30px;
+  padding-left: 12px;
+  padding-right: 10px;
+  
+}
+#f{
+  width:99vw;
+  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
+  z-index:5;
+ }
+
+
+.room{
+  display:flex;
+}
+.container-fluid  .navbar .collapse .active{
+  font-style:italic;
+  font-size: 24px;
+  border-bottom:4px solid gold;
+  border-end-start-radius: 23px;
+  border-end-end-radius: 23px;
+}
+.nav-item a{
+  font-size: 22px;
+}
+
+.down{
+  width:700px;
+  border-radius: 10px;
+  margin-top:40px;
+  margin-left:-55px; 
+  width:90px;
+  display:none;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  padding:6px;
+  
+  
+}
+.down a{
+  font-size: 20px;
+  color:black;
+  text-decoration: none;
+  padding-top:20px;
+  border-bottom: 2px solid blue ;
+}
+.drop:hover .down{
+  display:inline-block;
+  position:absolute;
+  margin-right: 100px;
+}
+
+.carousel .active{
+  z-index:-1;
+}
+ .container table{
+  border-radius: 4px solid green;
+}
+th{
+  font-size:20px;
+}
+
+
+/* Testing css */
+
+
+/* Team Section */
+.team {
+    padding: 30px 0;
+    text-align: center;
+}
+ 
+.team h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+ 
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+ 
+.card {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition:box-shadow ;
+    width: 18rem;
+    height: 25rem;
+    margin-top: 10px;
+}
+ 
+.card:hover {
+  
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+ 
+.card-img {
+    width: 18rem;
+    height: 12rem;
+}
+ 
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+ 
+.card-info button {
+    margin: 2rem 1rem;
+}
+ 
+.card-name {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+ 
+.card-role {
+    font-size: 1rem;
+    color: #888;
+    margin: 5px 0;
+}
+ 
+.card-email {
+    font-size: 1rem;
+    color: #555;
+}
+ 
+ 
+@media (max-width: 768px) {
+    nav {
+        display: block;
+    }
+ 
+    .logo {
+        text-align: center;
+    }
+ 
+    .nav-links {
+        margin-top: 1rem;
+        justify-content: space-between;
+    }
+ 
+    .nav-links li {
+        margin-right: 0;
+    }
+ 
+    .about h1 {
+        font-size: 2rem;
+    }
+ 
+    .about p {
+        font-size: 0.9rem;
+    }
+ 
+    .about-info {
+        flex-direction: column;
+        text-align: center;
+    }
+ 
+    .about-img {
+        width: 60%;
+        height: 60%;
+        margin-bottom: 1rem;
+    }
+ 
+    .about-info p {
+        margin: 1rem 2rem;
+    }
+ 
+    .about-info button {
+        margin: 1rem 2rem;
+        width: 10rem;
+    }
+ 
+    .team {
+        margin: 0 1rem;
+    }
+}
+.grid-main{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+  overflow-x: hidden;
+
+}
+.grid-item{
+  background-color: #278ae0;
+  padding: 2px;
+  width:70px;
+  height: 40px;
+  margin: 10px;
+  border: 1px solid black;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size:19px;
+  border-radius: 10px;
+}
+#f{
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  backdrop-filter: blur(10px);
+  overflow:hidden;
+ 
+}
+.upper{
+  margin-top:5%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 33%;
+    /* position:absolute;
+    top: 25%;
+    left:33%; */
+}
+.lower{
+  background-color: rgb(130, 169, 158);
+  height: 450px;
+  width: 450px;
+  padding:20px;
+  border-radius: 10px;
+
+}
+.upper .lower .form-group input{
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size:20px;
+}
+
+/* Contact.CSS */
+
+#conatiner
+{
+    margin-top:8%;
+    margin-bottom: 20%;
+    height:61vh;
+     }
+     #container .row{
+        margin-top:1%;
+        color: white;
+        margin-bottom: 10%;
+
+     } 
+   
+.col-6{
+    height: 300px;
+}
+
+
+.col-6 h4{
+    margin-top:7%;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-weight: 200;
+    margin-left: 2%;
+    color: white;
+    font-weight: bold;
+    margin-bottom:20px;
+    font-display:inherit;
+}
+.col-6 .data p{
+line-height: 10px;
+margin:18px;
+color: white;
+
+}
+.col-6 p i{
+    text-align: center;
+    color: white;
+    margin-right: 10px;
+
+}
+
+.media{
+   display: inline-block;
+   margin-left:20px;
+}
+
+
+#link:hover{
+    color: rgba(104, 85, 224, 1);
+    background:transparent;
+    transform: scaleX(1.2);
+
+}
+#link1:hover{
+    color: rgb(84, 201, 139);
+    background:transparent;
+    transform: scaleX(1.2);
+
+}
+
+#red:hover{
+    color:rgb(192, 71, 71);
+    background:transparent;
+    transform: scaleX(1.2);
+}
+.data{
+    margin-left: 10%;
+    margin-top: 5%;
+} 
+#row{
+    background-color:black;
+    border-radius: 10px;
+
+   
+
+}
+
+
+/* GRID display */
+
+      .grid1{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            columns: 3 33%;
+            height: 20%;
+            margin: 10px;
+            grid-gap: 10px;
+        }
+        .grid-item1{
+            border:1px solid red;
+            padding:10px;
+            background-color: aliceblue;
+            backdrop-filter: blur(10px);
+
+        }
+        .grid1 .grid-item1 p{
+            width: 70%;
+            line-height: 28px;
+        }
+        .grid1 .grid-item1  img{
+           height:inherit;  
+          width: 29%;      
+          object-fit: cover; 
+        }
+        /* table css for food */
+        .tablefood
+        {
+          background-image: url("{% static 'images/food.svg' %}");
+          background-repeat:no-repeat ;
+          object-fit: cover;
+        }
+
+/* End of Grid */
+
+   </style>
+</head>
+<body>
+   <script>AOS.init({duration:12000});</script>
+   <script>
+    function logreq(val){
+      alert("Login Required to see the "+ val);
+    }
+   </script>
+  
+  <!-- <audio src="{% static 'images/water.mp3' %}" controls id="playaudio" style="display: none;"></audio> -->
+  
+  <!-- <script src="//code.tidio.co/w4ygemwzuovengygqo6gm5w5i3nomzxk.js" async></script> -->
+  <div class="container-fluid mt-2 header rounded 10"  id="f" data-aos="fade-up">
+        
+    <nav class="navbar navbar-expand-md bg-transparent navbar-dark m-0 " style="justify-content: space-evenly ;">
+        <img src="{% static '/images/brand.png' %}" class="navbar-brand" width="70px" height="75px" style="margin:0px;padding:0px;border-radius: 10px;">
+        <button class="navbar-toggler bg-dark"  type="button" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="fun()">
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav d-flex justify-content-end w-100">
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" class="bi bi-house" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>&ensp;Home</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark {% if request.path == '/about-us' %}active{% endif %}" href="{% url 'about-us' %}">&ensp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
+              </svg>&ensp;About Us</a>
+            </li>   
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark {% if request.path == '/contact'  %}active{% endif %}" href="{% url 'contact' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg>&ensp;Contact Us</a>
+            </li>
+            
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark {% if request.path == '/reception/rules' %}active{% endif %}" href="{% url 'rules' %}">Rules</a>
+            </li>
+            <li class="nav-item m-2"><a class="nav-link text-dark {% if request.path == '/reception/menu' %}active{% endif %}" href="{% url 'menu' %}" >Menu</a></li>
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark {%if request.path == '/rooms' %}active{%endif%}" href="{% url 'rooms' %}" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hospital" viewBox="0 0 16 16">
+                <path d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"/>
+                <path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"/>
+              </svg>&ensp;Rooms</a>
+            </li> 
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark {% if request.path == '/feedback' %}active{% endif %}" href="{% url 'feedback' %}">Feedback</a>
+            </li>
+
+            {% if user.is_authenticated %}
+             
+            <script src="//code.tidio.co/w4ygemwzuovengygqo6gm5w5i3nomzxk.js" async></script>
+              {% if request.user.role_type == "Admin" %}
+              <li class="nav-item m-2"><a class="nav-link text-dark {% if request.path == '/reception/tenants' %}active{% endif %}" href="{% url 'T_List' %}">Hostelers</a></li>
+              <li class="nav-item m-2"><a class="nav-link text-dark {% if '/reception/registration' in request.path  %}active{% endif %}" href="{% url 'register' %}">Register Hosteler</a></li>
+              <li class="nav-item m-2"><a class="nav-link text-dark {% if request.path == '/reception/problems_list' %}active{% endif %}" href="{% url 'problems_list' %}">Problems</a></li>
+              {% else %}
+            <li class="nav-item m-2"><a class="nav-link text-dark {% if request.path == '/reception/problem' %}active{% endif %}" href="{% url 'problem' %}">Problem</a></li>
+            {% endif %}
+            <li class="nav-item m-2"><a class="nav-link text-dark" href="{% url 'logout' %}">Log Out</a></li>
+              <li class="nav-item m-2">
+                  <a href="{% url 'info' request.user.id %}" ><svg xmlns="http://www.w3.org/2000/svg" width="42" height="55" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                  </svg></a>
+              </li>
+
+            {% else %}
+            
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark" href="{% url 'login' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+              </svg>&ensp;Login</a>
+            </li> 
+            <li class="nav-item m-2">
+              <a class="nav-link text-dark" href="{% url 'sign' %}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+              </svg>&ensp;Sign up</a>
+            </li> 
+            {% endif %}
+          </ul>
+        </div>  
+      </nav>
+    </div>
+    {% block home %}
+    {% endblock %}
+  </body>
+ </html>

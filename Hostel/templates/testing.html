@@ -1,0 +1,347 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayIn</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="icon" type="text/css" href="{% static 'images/login_back.jpg' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   
+
+   <style>
+     body{
+        box-sizing: border-box;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        user-select: none;
+        overflow-x: hidden;
+     }
+     .row1{
+       margin-top:20px;
+      background: transparent;
+      display:flex;
+      align-items: center;
+      justify-content: end;
+       border-radius:15PX 15px;
+       display: flex;
+       width:100%;
+       height:80px;   
+     }
+   
+   .img{
+        height:55.6px;
+        width: 250px;
+        object-fit:cover;
+        margin-top:7px;    
+        margin-left: 3.9px;
+        image-resolution:initial;
+        filter: brightness(100%);
+        background-color: transparent;
+        mix-blend-mode:hard-light;
+        overflow: hidden;
+    }
+    .row1 a{
+        text-decoration: none;
+        color:black;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 20px;
+        position: relative;
+        transition: border-bottom 0.9s ease-in;
+    }
+
+    .row1 a:hover {
+  border-bottom: 5px solid rgb(103, 183, 46);
+  border-bottom-right-radius:7px;
+}
+
+.row .col-2 a{
+    border: 1px solid rgb(153, 213, 132);
+    height: 80px;  
+    border-radius: 49%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:2rem;
+}
+ .container{
+        height:max-content;
+        background-size: cover;
+        background-color: white;
+        flex-direction:column;
+        display:flex;
+       margin-top:70px;
+       border-radius: 15px;
+        width:920px;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    } 
+    .container1{
+       height:max-content;
+        background-size: cover;
+        background-color: white;
+        flex-direction:column;
+        display:flex; 
+       margin-top:70px;
+       border-radius: 15px;
+        width:920px;
+    }
+    .row{
+      display: flex
+    }
+    [class*='col-'],.col{
+        height: 100%;
+        margin: 0;
+    }
+   
+    .col-7{
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 20px 0px 20px 0px;
+        /* background-image: url("{% static '\images\sign-up.png' %}"); */
+        height:600px;
+        margin-right: 0;
+        border-radius:10px;
+        background-size:fill;
+        
+    }
+ 
+    .span1{
+        top: 2%;
+        position: absolute;
+        left:15%;
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        background:linear-gradient(to right, #ff512f, #f09819);
+    }
+    .span2{
+        position: absolute;
+       top:77.88%;
+        left: 72.8%;
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        background:linear-gradient(#1845ad, #23a2f6);
+    }
+    .col-5{
+        height:max-content;
+        border-radius:10px;
+        background-size:fill;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+   
+   }
+       
+    h2{
+        color: #278ae0;
+
+        font-family: sans-serif;
+                font-size:32px;
+    }
+
+  .button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0 10px;
+  border:3px solid rgba(104, 85, 224, 1);
+   background: transparent;
+  width: 172px;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+  transition: 0.4s;
+   margin-left:10px;
+    }
+  .button:first-child:hover {
+  color: white;
+
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
+}
+.button:last-child:hover {
+  color: white;
+
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgb(212, 75, 40);
+}
+.container a{
+  text-decoration: none;
+  text-align: center;
+  font-family: sans-serif;
+  color:black;
+  margin-left: 35px;
+}
+.hb{
+  margin-top: 20px;
+  margin-left: 20px;
+  height:30px;
+  padding-left: 12px;
+  padding-right: 10px;
+  
+}
+#f{
+  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
+  top:0.5%;
+  z-index:5;
+ }
+.full{
+  background-color: red;
+  height: 25px;
+   width: 40px;
+   border-radius: 5px;
+   padding:5px;
+   cursor: pointer;
+
+}
+.ava{
+  background-color: green;
+   height: 25px;
+   width: 40px;
+   border-radius: 5px;
+   color:pointer;
+   padding:5px;
+  text-align: center;
+}
+
+.room{
+  display:flex;
+}
+.container-fluid  .row1 .col-9 .active{
+  font-style:italic;
+  font-size: 26px;
+  border-bottom:4px solid gold;
+  border-end-start-radius: 23px;
+  border-end-end-radius: 23px;
+}
+
+.down{
+  border-radius: 10px;
+  margin-top:30px;
+  margin-right:100px;
+  width:90px;
+  display:none;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  padding:6px;
+}
+.drop:hover .down{
+  display:inline-block;
+  position:absolute;
+  margin-right: 100px;
+}
+   </style>
+</head>
+<body>
+   <div class="container-fluid " id="f">
+    <div class="col-3">
+        <h3>StayIn</h3>
+    </div>
+    <div class="row1" >
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}"  ><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="black" class="bi bi-house" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                  </svg>&ensp;Home</a>
+                  <a href="{% url 'about-us' %}" class="{% if request.path == '/about-us' %}active{% endif %}">About Us</a>
+                <a href="{% url 'contact' %}" class="{% if request.path == '/contact'  %}active{% endif %}"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg>&ensp;Contact Us</a>
+                  <a href="{% url 'rooms' %}" class="{% if request.path == '/rooms' %}active{% endif %}">Rooms</a>
+                  <a>Menu</a>
+                  {% if user.is_authenticated %}
+                  {% if request.user.role_type == "User" %}
+                  <a>Rules</a>
+                  {% else %}
+                  <a >Rules</a>
+                  <a class="{% if request.path == '/reception/tenants' %}active{% endif %}" href="{% url 'T_List' %}">Tenants</a>
+                  <a class="{% if request.path == '/reception/registration' %}active{% endif %}" href="{% url 'register' %}">Register Tenant</a>
+                  {% endif %}
+                  <div class="drop">
+                    <a href="#" ><svg xmlns="http://www.w3.org/2000/svg" width="35" height="42" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                    </svg></a>
+                  <div class="down">
+                    <a href="#">{{user.username}}</a>
+                    <a href="{% url 'info' request.user.id %}">info</a>
+                    <a href="{% url 'logout' %}">logout</a>
+                  </div>
+                </div>
+                  {% else %}
+                <a href="{% url 'login' %}" ><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                    <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg>&ensp;Login</a>
+                <a href="{% url 'sign' %}" ><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                  </svg>&ensp;Sign up</a>
+                  {% endif %}
+            </div>
+        </div>
+    </div>
+   <br>
+   </div>
+   {% block home %}
+   {% endblock %}
+   <!-- <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+     <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/bg.png' %}" alt="Los Angeles" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/bg2.png' %}" alt="Chicago" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/bg3.png' %}" alt="New York" class="d-block w-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+   </div><br><br>
+   <h2>Our Location</h2>
+   
+   <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7629.256337519347!2d81.8406431!3d17.0418993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stirumala%20balaji%20boys%20hostel%20dhiwancheruvu!5e0!3m2!1sen!2sin!4v1692031759836!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+ 
+   <div class="team-cards " style="margin-bottom: 100px;">
+    {% for fn in floors %}
+    <div class="card">       
+        <h3 style="text-align: center; margin-top:10px;">Floor {{fn}}</h3>
+        <div class="grid-main" style="overflow-y: scroll;">
+            {% for i in f1 %}
+                {% if fn == i.floor_no %}
+                    {% if request.user.role_type == "Admin" %}
+                        {% if i.room_status == "Available" %}
+                            {% if i.no_of_beds_ava != i.total_no_of_beds %}
+                            <div class="grid-item" ><a  href="{% url 'room_info' i.room_no %}">{{i.room_no}}</a></div>
+                            {% else %}
+                            <div class="grid-item" style="background: green;"><a href="{% url 'room_info' i.room_no %}">{{i.room_no}}</a></div>
+                            {% endif %}
+                        {% else %}
+                            <div class="grid-item" style="background: red;"><a href="{% url 'room_info' i.room_no %}">{{i.room_no}}</a></div>
+                        {% endif %}
+                    {% else %}
+                        {% if i.room_status == "Available" %}
+                        <div class="grid-item" ><a  href="#">{{i.room_no}}</a></div>
+                        {% else %}
+                        <div class="grid-item" style="background: red;"><a href="#">{{i.room_no}}</a></div>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+  </body>
+ </html>

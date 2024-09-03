@@ -1,0 +1,90 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block home %}
+<section class="about">
+    <p style="font-weight: bold">Our hostel is one of the best hostels available...</p>
+    <p>Our hostel is located at Diwancheruvu,Rajahmundry.</p>
+    <div class="about-info">
+        <div class="about-img">
+            <img src="{% static '/images/rbhlogo2.png' %}" alt="Logo">
+        </div> 
+    </div>
+    <hr>
+    <div style="display: flex;justify-content: center;">
+        <div style="box-shadow: 3px 3px 3px 3px solid rgb(103, 231, 103);">
+            <h4 style="text-align: center;">Our Features</h4>
+            <p>We provide hostel at affordable prices with more facilities.</p>
+            <p>We Provide healthy and homely food.</p>
+            <p>We provide lockers for everyon to keep your things safe</p>
+            <p>We have large parking safe to park your vehicles</p>
+            <p>We provide free Washing Machine</p>
+            <p>Free Wifi</p>
+            <p>We provide hot and cool water for drinking.</p>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="card m-3" style="width:18rem;height:19rem;">
+            <img  height="210px" src="{% static 'images/parkingspace.jpg' %}" class="card-img-top p-2">
+            <div class="card-body">
+                <h4 class="card-title">Parking Space </h4>
+                
+            </div>
+        </div>
+        <div class="card m-3" style="width:18rem;height:19rem;">
+            <img height="210px" src="{% static 'images/lunch.jpg' %}" class="card-img-top p-2">
+            <div class="card-body">
+              <h4 class="card-title">Meals </h4>
+              
+            </div>
+        </div>
+        <div class="card m-3" style="width:18rem;height:19rem;">
+            <img height="210px" src="{% static 'images/hostelimage.jpg' %}" class="card-img-top p-2">
+            <div class="card-body">
+              <h4 class="card-title">Our Rooms </h4>
+            </div>
+        </div>
+        <div class="card m-3" style="width:18rem;height:19rem;">
+            <img height="210px" src="{% static 'images/dosa.jpg' %}" class="card-img-top p-2">
+            <div class="card-body">
+              <h4 class="card-title">BreakFast </h4>
+            </div>
+          </div>
+
+
+    </div>
+</section>
+<hr>
+
+<section class="team">
+    
+    <div class="team-cards">
+        <!-- Cards here -->
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-img" style="height:220px;">
+                <img src="{% static 'images/owner.jpg' %}" alt="Owner">
+            </div>
+            <div class="card-info">
+                <h2 class="card-name">Chandra Sekhar</h2>
+                <p class="card-role">Owner</p>
+                <p class="card-email">bhanurichandu@gmail.com</p>
+                <p>9885465832</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-img" style="height:220px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiCBLRP9yhtEx9pxzX58DDy0Bo6zXSGISeaw&usqp=CAU" alt="Cook">
+            </div>
+            <div class="card-info">
+                <h2 class="card-name">Hari</h2>
+                <p class="card-role">Cook</p>
+                <p>9121839369</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block home %}
+
+<div class="container tablefood" style=" background:transparent; border-radius:20px; padding:10px;margin-top:50px;">
+    <h2 style="text-align:center">Hostel Menu </h2>
+    <br>
+    <table class="table table-stripped" >
+      <thead >
+        <tr style="color:blue;">
+          <th class="menu">Day</th>
+          <th class="menu">BreakFast (7:00 AM to 9:00 AM)</th>
+          <th class="menu">Lunch (12:00 PM to 2:00 PM) </th>
+          <th class="menu"> Dinner (7:30 PM to 10:00 PM) </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="menu"><b> Monday </b></td>
+          <td class="menu"> Puri </td>
+          <td class="menu">Rice,Dal,Egg,Curd,Lemon pickle</td>
+          <td class="menu"> Rice,Dal,Brinjal curry,Curd,Mango pickle</td>
+        </tr>
+        <tr>
+          <td class="menu"><b>Tuesday </b></td>
+          <td class="menu">Upma</td>
+          <td class="menu">Rice,Dal,Sambar,Curd, Mango pickle</td>
+                  <td> Rice,Dal,Sambar,Egg,Curd,Lemon pickle</td>
+  
+        </tr>
+        <tr>
+          <td class="menu"><b> Wednesday </b></td>
+          <td class="menu">Idli</td>
+          <td class="menu">Rice,Dal,Carrot Curry,Curd,Lemon pickle</td>
+                  <td> Rice,Dal,Sambar,Curd,Mango pickle</td>
+  
+        </tr>
+        <tr>
+          <td class="menu"> <b>Thrusday </b></td>
+          <td class="menu">Chapathi</td>
+          <td class="menu">Rice,Dal,,Egg fry,Curd,Mango pickle</td>
+                  <td> Rice,Cabbage Fry,Sambar,Curd,Lemon pickle</td>
+  
+        </tr>
+        <tr>
+          <td class="menu"> <b> Friday </b></td>
+          <td class="menu">Uttapam</td>
+          <td class="menu">Rice,Dal,Sambar,Curd,Lemon pickle</td>
+                  <td>Fried Rice,Rice,Curd,Mango pickle</td>
+  
+        </tr>
+        <tr>
+          <td class="menu"> <b> Saturday </b></td>
+          <td class="menu">Pulihora</td>
+          <td class="menu">Rice,Dal,Sambar,Curd,Mango pickle</td>
+                  <td> Chapathi,Potato curry,</td>
+  
+        </tr>
+        <tr>
+          <td class="menu"><b> Sunday </b></td>
+          <td class="menu">Dosa</td>
+          <td class="menu">Rice,Dal,Spinach curry,Curd,Mango pickle</td>
+                  <td> Biryani,Chicken,Curd,Lemon pickle</td>
+  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}

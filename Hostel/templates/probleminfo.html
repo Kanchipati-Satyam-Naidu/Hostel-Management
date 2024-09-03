@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+{% block home %}
+<div class="upper" style="height:fit-content;margin-bottom:200px;">
+    <div class="lower" style="margin-bottom: 100px;">
+
+        <form method="post">
+            {% csrf_token %}
+            <label>User Name</label>
+            <input type="text" value="{{ f.username }}" name="username" class="form-control mt-0 mb-3 my-1" readonly>
+            <label>Room No</label>
+            <input type="text" value="{{ f.room_no }}" class="form-control mt-0 mb-3 my-1" name="room_no">
+            <label>Problem</label>
+            <textarea rows="3" cols="20" class="form-control mt-0 mb-3 my-1"  readonly>{{f.issue}}</textarea>
+            <button class="btn" style="background-color: gold;"><a href="{% url 'problems_list' %}">Back</a></button>
+            <button class="btn btn-primary"><a href="{% url 'send_reply' f.email %}">Reply</a></button>
+            <button class="btn btn-danger"><a href="{% url 'delprob' f.id %}">Delete</a></button>
+            {% if f.status == 'Not Viewed' %}
+            <input type="submit" class="btn btn-success" value="Mark as Read" >
+            {% endif %}
+        </form>
+
+    </div>
+</div>
+{% endblock %}

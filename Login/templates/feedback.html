@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+{% block home %}
+<div style="display:flex;justify-content: end;margin:10px;">
+    <div style="margin-right:60px;"><b>Rating:</b>{{rating}}</div>
+    {% if user.is_authenticated %}
+    {% if request.user.role_type != "Admin" %}
+<button class="btn " style="background-color: gold;margin-right:30px;"><a href="{% url 'feedbackform' %}">Give Feedback</a></button>
+{% endif %}
+{% endif %}
+</div>
+    <div style="margin-top:5px;margin-left: 20px;">
+        {% for i in fb %}
+        <div>
+            <h3>{{i.email}}</h3>
+            <p>{{i.description}}</p>
+            <p><b>Rating:</b>{{i.rating}}</p>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

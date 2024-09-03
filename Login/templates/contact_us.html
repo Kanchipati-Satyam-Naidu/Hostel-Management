@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block home %}
+<script>AOS.init({duration:1200});</script>
+  <div class="container" id="conatiner">
+    <h2 id="contact">Contact Me</h2>
+    <div class="row" id="row">
+      <div class="col-6" style="margin: 0;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101918.97755515669!2d81.79744267733872!3d17.022048749128096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37a1def2a25ad3%3A0xe774869edab11e8!2sSachivalayam!5e0!3m2!1sen!2sin!4v1694237058452!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border-radius: 10px;"></iframe>
+      </div>
+      <div class="col-6">
+        <div class="data" data-aos="fade-down" data-aos-duration="2000" data-aos-easing="ease-in-out">
+        <h4 style="color: white;">Meet Me</h4>
+            <p><i class="fa fa-phone" id="link1"></i>+91 9885465280</p>
+            <p>
+              <i class="fa fa-envelope" id="red"></i>bhanurichandu@gmail.com</p>
+              <p><i class="fa fa-map-marker" id="link" aria-hidden="true"></i>Dhiwancheruvu, rajahmundry</p>
+              <div class="media">
+                <a href="#" id="link" style="text-decoration: none; background: transparent;" class="ii"><i style='font-size:24px;color:white;' id="link" class='fab'>&#xf0e1;</i></a>
+                <a href="#" id="red" style="text-decoration: none; background: transparent;" class="ii"><i style='font-size:24px;color:white;' id="red" class='fas'>&#xf0e0;</i></a>
+                <a href="#" id="link" style="text-decoration: none; background: transparent;" class="ii"><i style='font-size:24px;color:white;' id="link" class='fab'>&#xf39e;</i></a>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="room_type" name="room_type">
+        <option value="AC 2-Sharing">AC-2 Sharing</option>
+        <option value="AC 3-Sharing">AC-3 Sharing</option>
+        <option value="Non AC 2-Sharing">Non AC-2 Sharing</option>
+        <option value="Non AC 3-Sharing">Non AC-3 Sharing</option>
+    </select>
+    <select id="room_no" name="room_no">
+        <option>--Select room no</option>
+    </select>
+
+    <script>
+        var rt = document.getElementById("room_type");
+        var roomNoSelect = document.getElementById("room_no");
+
+        rt.addEventListener("change", function() {
+            var selectedRoomType = rt.value;
+            var roomNos = JSON.parse('{{ rooms | safe }}');
+            
+            roomNos[selectedRoomType].forEach(function(roomNo) {
+            var option = document.createElement("option");
+            option.value = roomNo;
+            option.textContent = roomNo;
+            roomNoSelect.appendChild(option);
+        });
+        });
+
+    </script>
+</body>
+</html>

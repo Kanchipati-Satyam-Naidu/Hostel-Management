@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+{% block home %}
+<div class="upper" style="height:fit-content;">
+    <div class="lower" style="height:fit-content;margin-bottom: 30px;">
+
+        <form method="post">
+            {% csrf_token %}
+            <label>Receiver's Email:</label>
+            <input name="email" value="{{email}}" class="form-control mt-0 mb-3 my-1" readonly>
+            <label>Message:</label>
+            <textarea rows="3" cols="20" class="form-control mt-0 mb-3 my-1" name="message"></textarea>
+            <input type="submit" value="Send" class="btn btn-primary">
+            <input type="reset" value="clear" class="btn btn-danger">
+        </form>
+    </div>
+</div>
+{% endblock %}

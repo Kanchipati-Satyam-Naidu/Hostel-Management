@@ -1,0 +1,56 @@
+{% extends 'navbar.html' %}
+{% block home %}
+<body>
+<form method="post">
+  {% csrf_token %}
+  <div style="margin-right:70px;padding-top:10px;justify-content:end;display:flex;margin-bottom: 30px;position:sticky;top:16%;z-index: 5;">
+  <select name="search" style="margin:0px;width:220px;text-align: center;border:4px solid black;border-radius: 5px;">
+    <option value="all">---ALL--</option>
+    <option value="Paid">Fee Paid</option>
+    <option value="Not Paid" >Not Paid</option>
+    <option value="Guest">Guests</option>
+    <option value="Monthly">Hostelers</option>
+  </select>
+  <input type="submit" value="Go" class="ps-3 m-0">
+</div>
+</form>
+    <!-- <div class="container"> -->
+        <div class="row" style="padding-right:30px;">
+            <div class="col card p-4" style="min-height:500px;margin-left:60px;">
+               <h2 style="border-bottom: 3px solid gold;text-align:center;">Hostelers List</h2>
+                <table class="table table-stripped table-hover" style="cursor: pointer;">
+                  <tr style="border-bottom: 3px solid blue;">
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Profession</th>
+                    <th>Year</th>
+                    <th>Mobile </th>
+                    <th>Aadhar</th>
+                    <th>Room No</th>
+                    <th>DOJ</th>
+                    <th>Room Type</th>
+                    <th>Total Fee</th>
+                    <th>Payment Status</th>
+                    <th>Stay Type</th>
+                  </tr>
+                  {% for i in tenants %}
+                  <tr>
+                    <td><a href="{% url 'update' i.id %}">{{forloop.counter}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.Name}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.profession}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.year}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.mobile}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.aadhar}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.room_no}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.DOJ}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.room_type}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.fee}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.payment_status}}</a></td>
+                    <td><a href="{% url 'update' i.id %}">{{i.stay_type}}</a></td>
+                  </tr>
+                  {% endfor %}
+                </table>
+            </div>
+        </div>
+  </body>
+{% endblock %}

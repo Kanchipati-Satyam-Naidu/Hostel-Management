@@ -1,0 +1,20 @@
+{% extends 'navbar.html' %}
+{% block home %}
+<div class="upper" style="height:fit-content;">
+    <div class="lower" style="height:fit-content;">
+    <form method="post">
+        {% csrf_token %}
+        <label>Email</label><br>
+        <input id="id_email" name="email" value="{{request.user.email}}" class="form-control mt-2 my-1" readonly ><br>
+        <label >Description</label><br>
+        <!-- <textarea id="id_description" name="description"  rows="3" class="form-control mt-2 my-1"></textarea><br> -->
+        <br><textarea id="id_description" name="description" rows="3" cols="20" class="form-control mt-2 my-1"> </textarea><br>
+        <label>Rating</label><br>
+        <input class="form-control mt-2 my-1" type="number" min="0" max="5" id="id_rating" name="rating" placeholder="Enter rating as number from 1 to 5" >
+        <br><br> 
+        <input type="submit" value="Submit" class="btn btn-primary">
+        <input type="reset" value="Clear" class="btn btn-danger">
+    </form>
+</div>
+</div>
+{% endblock %}

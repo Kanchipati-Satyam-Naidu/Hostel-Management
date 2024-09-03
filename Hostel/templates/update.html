@@ -1,0 +1,21 @@
+{% extends 'navbar.html' %}
+{% block home %}
+    <div class="upper" style="height:fit-content;">
+        <h3>Update Hosteler {{t.Name}} </h3>
+        <div class="lower" style="height:fit-content;">
+            <form method="post" class="form-group">
+                {% csrf_token %}
+                {% for i in tenants %}
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">{{i.label_tag}}</div><div class="col" style="width:300px;">{{i}}</div>
+                    </div>   
+                </div>
+                {% endfor %}
+                <button class="btn btn-success" type="submit" >Save</button>
+                <button class="btn" style="background-color: gold;"><a href="{% url 'T_List' %}">Don't Save</a></button>
+                <button class="btn btn-danger" ><a href="{% url 'delete' t.id %}">Delete</a></button>
+                </form> 
+    </div>
+</div>
+{% endblock %}

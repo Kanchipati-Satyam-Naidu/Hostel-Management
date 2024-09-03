@@ -1,0 +1,68 @@
+{% extends 'navbar.html' %}
+{% load custom_filters %}
+{% load static %}
+{% block home %}
+    <form method="post">
+        {% csrf_token %}
+        <div style="margin-right:70px;padding-top:10px;justify-content:end;display:flex;margin-bottom: 30px;position:sticky;top:16%;z-index:4;">
+            <select name="search" style="margin:0px;width:220px;text-align: center;cursor:pointer;border:4px solid black;border-radius: 5px;">
+                <option value="all">--ALL--</option>
+                <option value="AC 2-Sharing" {% if ty == 'AC 2-Sharing' %}selected{% endif %}>AC 2 Sharing</option>
+                <option value="AC 3-Sharing" {% if ty == 'AC 3-Sharing' %}selected{% endif %}>AC 3 Sharing</option>
+                <option value="Non AC 2-Sharing" {% if ty == 'Non AC 2-Sharing' %}selected{% endif %}>Non AC 2 Sharing</option>
+                <option value="Non AC 3-Sharing" {% if ty == 'Non AC 3-Sharing' %}selected{% endif %}>Non AC 3 Sharing</option>
+            </select>
+        <button type="Submit" style="margin:0px;text-align: center;border:4px solid black;border-radius: 5px;">Go</button>
+    </div>
+    <div >
+        <div style="position:sticky;top:18%;z-index:4;">
+            <div class="grid-item" id="pfull" title="Blue colour Represents Available Rooms" style="width:fit-content;cursor:pointer;" >Available</div>
+            {% if request.user.role_type == "Admin" %}
+            <div class="grid-item" id="empty" title="Green colour Represents Empty Rooms" style="background:green;width:90px;cursor:pointer;" >Empty</div>
+            {% endif %}
+            <div class="grid-item" id="full" title="Red colour Represents Completely Filled Rooms" style="background: red;width:90px;cursor:pointer;" >Full</div>
+        </div>
+        <div style="display:flex;justify-content: end;margin-right: 20px;cursor:pointer;position:sticky;top:27%;z-index:4;">
+            {% if user.is_authenticated %}
+            {% if request.user.role_type == "Admin" %}
+            <button class="button" style="width:120px;display:flex;margin-bottom: 20px;padding-left: 10px;background-color: gold;"><a href="{% url 'addroom' %}">Add Room</a></button>
+            {% endif %}
+            {% endif %}
+        </div>
+
+       
+        <div class="team-cards " style="margin-bottom: 100px;">
+            {% for i in floors %}
+            <div class="card">
+                <h3 style="text-align: center; margin-top:10px;border-bottom: 3px solid red;">Floor {{i}}</h3>
+                
+                <div class="grid-main" style="overflow-y: scroll;">
+                    {% with flats|get_rooms:i as rms %}
+                    {% for j in rms %}
+                        
+                        {% if request.user.role_type == "Admin" %}
+                            {% if j.room_status == "Available" %}
+                                {% if j.no_of_beds_ava != j.total_no_of_beds %}
+                                <div class="grid-item" ><a  href="{% url 'room_info' j.room_no %}">{{j.room_no}}</a></div>
+                                {% else %}
+                                <div class="grid-item" style="background: green;"><a href="{% url 'room_info' j.room_no %}">{{j.room_no}}</a></div>
+                                {% endif %}
+                            {% else %}
+                                <div class="grid-item" style="background: red;"><a href="{% url 'room_info' j.room_no %}">{{j.room_no}}</a></div>
+                            {% endif %}
+                        {% else %}
+                            {% if j.room_status == "Available" %}
+                                <div class="grid-item" ><a  href="#">{{j.room_no}}</a></div>
+                            {% else %}
+                                <div class="grid-item" style="background: red;"><a href="#">{{j.room_no}}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        
+                    {% endfor %}
+                    {% endwith %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}

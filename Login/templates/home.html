@@ -1,0 +1,154 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block home %}
+
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+     <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/bg.png' %}" alt="Los Angeles" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/bg2.png' %}" alt="Chicago" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'images/bg3.png' %}" alt="New York" class="d-block w-100">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+   </div><br><br>
+  
+
+  <h2 style="color:red;display:flex;justify-content: center;">Our Facilities</h2>
+  
+   <hr>
+  <!-- Start of grid 2 -->
+{% if request.user.role_type == "Admin" %}
+<div class="row" style="padding-right:30px;">
+  <div class="col card p-4" style="min-height:300px;margin-left:60px;">
+     <h2 style="border-bottom: 3px solid gold;text-align:center;">Problems Raised</h2>
+      <table class="table table-stripped table-hover" style="cursor: pointer;">
+        <tr>
+          <th>User Name</th>
+          <th>Room No</th>
+          <th>Problem</th>
+          
+        </tr>
+        {% for i in problems %}
+          <tr>
+            <td>{{i.username}}</td>
+            <td>{{i.room_no}}</td>
+            <td><button class="btn btn-success w-4"><a href="{% url 'probleminfo' i.id %}">View</a></button></td>
+          </tr>
+        {% endfor %}
+      </table>
+  </div>
+</div>
+
+{% else %}
+<div class="grid1">
+  <div class="grid-item1">
+      <h3 style="width:fit-content; border-bottom: 2px solid green; color:black;font-variant:small-caps;font-display:unset;">Rooms</h3>
+      <img src="{% static 'images/room2s.jpg' %}" style="float: right;">
+
+      <p>
+        We are providing best rooms with fresh air and light.<br>
+        We have spacious rooms with both "AC" and "Non AC" rooms.<br>
+        Rooms will be maintained neat.Rooms will cleaned daily.  
+        <br>We provide Lockers also.       
+      </p>
+  </div>
+  <div class="grid-item1">
+      <h3 style="width:fit-content; border-bottom: 2px solid green; color:black;font-variant:small-caps;font-display:unset;"> Homely Food</h3>
+      <img src="  https://orderhomely.in/wp-content/uploads/2021/09/Banner-1-1.png" style="float: right;">
+      <p>
+        Providing Homely Food is our speciality.<br>
+        We provide healthy and hygene food.We provide unlimited breakfast.You can eat as much you want.
+        <br>
+        For more details you watch the food menu by clicking menu in the navigation bar.
+        </p> 
+  </div>
+
+
+  <div class="grid-item1">
+      <h3 style="width:fit-content; border-bottom: 2px solid green; color:black;font-variant:small-caps;font-display:unset;">Washing Machine</h3>
+      <img src="https://media.istockphoto.com/id/172485535/photo/washing-machine.jpg?s=612x612&w=0&k=20&c=heH0vH2hfuP7QLt4lGQvILj61sD5iuzs8sZk_izSazc=" alt="" style="float: right;">
+
+      <p>
+        We provide washing machine, we will not charge for that.<br>
+        You can wash as many times as you want.            
+    </p>
+  </div>
+  <div class="grid-item1">
+      <h3 style="width:fit-content; border-bottom: 2px solid green; color:black;font-variant:small-caps;font-display:unset;">Free WiFi</h3>
+      <img src=" https://cdn.britannica.com/42/141142-050-E3BBCE82/Wi-Fi-router.jpg?w=400&h=300&c=crop" style="float: right;">
+      <p>
+        We provide high speed internet,we will not charge for that.
+      </p> 
+  </div>
+  <div class="grid-item1">
+      <h3 style="width:fit-content; border-bottom: 2px solid green; color:black;font-variant:small-caps;font-display:unset;">CCTV</h3>
+      <img src="{% static 'images/cctv.jpg' %}" style="float:right;">
+      <p>
+          Our Hostel very safe and secure.
+          <br>We have CCTV everywhere. Every area of the hostel area is covered by CCTVs.
+      </p>
+  </div>
+  <div class="grid-item1">
+      <h3 style="width:fit-content; border-bottom: 2px solid green; color:black;font-variant:small-caps;font-display:unset;">Parking Space</h3>
+      <img src="https://images.moneycontrol.com/static-mcnews/2023/07/Untitled-design-4-1.png?impolicy=website&width=1600&height=900" alt="" style="float: right; height: 140px;">
+
+      <p>
+          We have large parking space.<br>
+          Everyone can park their vehicles in the parking area.         
+      </p>
+  </div>
+</div>
+
+<!-- End of grid 2 -->
+
+<div class="row m-5">
+            <h2 style="color:green;display:flex;justify-content: center;border-bottom: 2px solid gold;">Types of rooms Available</h2>
+          <div class="card m-3" style="width:18rem;height:19rem;">
+            <img  height="180px" src="{% static 'images/ac.jpg' %}" class="card-img-top p-2">
+            <div class="card-body">
+              <h4 class="card-title">AC 2 SHARING </h4>
+              <p class="card-text"><b>Fee:</b>Rs.5500</p>
+            </div>
+        </div>
+        <div class="card m-3" style="width:18rem;height:19rem;">
+          <img height="180px" src="{% static 'images/ac3s.jpg' %}" class="card-img-top p-2">
+          <div class="card-body">
+            <h4 class="card-title">AC 3 Sharing </h4>
+            <p class="card-text"><b>Fee:</b>Rs.5200</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width:18rem;height:19rem;">
+          <img height="180px" src="{% static 'images/Hostel.jpg' %}" class="card-img-top p-2">
+          <div class="card-body">
+            <h4 class="card-title">Non-AC 2 Sharing </h4>
+            <p class="card-text"><b>Fee:</b>Rs.4800</p>
+          </div>
+        </div>
+        <div class="card m-3" style="width:18rem;height:19rem;">
+          <img height="180px" src="{% static 'images/nonac3s.jpg' %}" class="card-img-top p-2">
+          <div class="card-body">
+            <h4 class="card-title">Non-AC 3 Sharing </h4>
+            <p class="card-text"><b>Fee:</b>Rs.4500</p>
+          </div>
+        </div>
+</div>
+{% endif %}
+<div style="height:50px;">
+
+</div>
+   {% endblock %}

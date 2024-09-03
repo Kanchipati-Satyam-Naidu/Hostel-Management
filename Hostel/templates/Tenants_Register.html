@@ -1,0 +1,98 @@
+{% extends 'navbar.html' %}
+{% block home %}
+
+
+<div class="container">
+    <div class="row">
+       <div class="col-5 ">
+        <form class="inner p-1 m-2" method="post" id="fr">
+            {% csrf_token %}
+            <h2 class="d-flex justify-content-center">Registration</h2>
+            {% for i in fields %}
+           <p> {{i.label_tag}}
+            {{i}}</p>
+            
+            {% endfor %}
+            
+              <p style="color:red;">{{msg}}</p>
+            <div class="d-flex"><button type="submit" class="button mt-3">Register</button>
+              <button type="reset" class="button mt-3">Clear</button></div>
+          </form>
+       </div>
+       <div class="col-7">
+
+             <h3 style="color:#ff0000;border-bottom: 4px solid yellow;">**Rules And Regulations**</h3>
+                <p>1. You have to pay 1 month fee as advance.<br><br>2. No one sholud use electronics gadgets like iron box,heater,kettle,etc.
+                <br><h6 style="color:red;">3. Hostel Management is not responsible for your things.</h6><br>
+                4. Outsiders will not be allowed into the hostel.<br><br>
+                5. Hostel Gates will closed after 10:30 pm<br><br>
+                6. Guest Fee for one day is <b>Rs.300</b> for Non AC and <b>Rs.500</b> for AC.<br><br>
+                7. A Guest must pay atleast 3 days fee<br><br>
+                8. You should inform 10 days before vocating.<br><br>
+                9. No Smoking and No Drinking inside hostel.<br><br>
+                10. Break Fast Timings: 8:00 am - 10:30 am<br><br>
+                11. Lunch Timings: 12:30pm - 2:00pm<br><br>
+                12. Dinner Timings: 7:30pm - 9:00pm<br><br>
+                13. Once paid money will not be returned.<br>
+              </p>
+            
+       </div>
+</div>
+
+<script>
+  var rt = document.getElementById("id_room_type");
+  var roomNoSelect = document.getElementById("id_room_no");
+  var st=document.getElementById("id_stay_type");
+  var fee=document.getElementById("id_fee");
+  roomNoSelect.innerHTML='';
+  var option = document.createElement("option");
+  option.textContent = "----Select Room No----";
+  roomNoSelect.appendChild(option);
+
+  function feecal(){
+    let srt=rt.value;
+    if(st.value=="Guest"){
+        if(srt.includes("Non")){
+          fee.value=900;
+        }
+        else if(srt.includes("AC")){
+          fee.value=1500;
+        }
+      }
+      else{
+        switch(srt){
+          case "AC 2-Sharing":fee.value=5500;
+                  break;
+          case "AC 3-Sharing":fee.value=5200;
+                break;
+          case "Non AC 2-Sharing":fee.value=4800;
+          break;
+          case "Non AC 3-Sharing":fee.value=4500;
+          break;
+          default:fee.value=0;
+        }
+      }
+  }
+
+  rt.addEventListener("change", function() {
+      let srt = rt.value;
+      var roomNos = JSON.parse('{{ rooms | safe }}');
+      roomNoSelect.innerHTML = '';
+
+      var option = document.createElement("option");
+      option.textContent = "----Select Room No----";
+      roomNoSelect.appendChild(option);
+
+      roomNos[srt].forEach(function(roomNo) {
+      var option = document.createElement("option");
+      option.value = roomNo;
+      option.textContent = roomNo;
+      roomNoSelect.appendChild(option);
+    });
+      
+    feecal();
+
+  });
+
+</script>
+{% endblock %}

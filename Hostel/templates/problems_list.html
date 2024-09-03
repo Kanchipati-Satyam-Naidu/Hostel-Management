@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+{% block home %}
+<div class="row" style="padding-right:30px;">
+    <div class="col card p-4" style="min-height:500px;margin-left:60px;">
+        <h2 style="border-bottom: 3px solid gold;text-align:center;">Problems List</h2>
+        <table class="table table-stripped table-hover" style="cursor: pointer;">
+            <tr style="border-bottom: 3px solid blue;">
+                <th>S.No</th>
+                <th>Username</th>
+                <th>Room No</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            {% for i in problems %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.username}}</td>
+                <td>{{i.room_no}}</td>
+                <td>{{i.status}}</td>
+                <td><button class="btn btn-success"><a href="{% url 'probleminfo' i.id %}">View</a></button></td>
+            </tr>
+            {% endfor %}
+        
+        </table>
+
+
+    </div>
+</div>
+{% endblock %}
